@@ -54,7 +54,10 @@ Here's a simple explanation of `useState`, `useEffect`, `useRef`, `useMemo`, `us
   Example:
 
   ```js
-  export default React.memo(MyComponent);
+  // Only re-renders if props change
+  const MyComponent = memo(({ prop1, prop2 }) => {
+    return <div>{/* Component content */}</div>;
+  });
   ```
 
 These tools help improve performance by reducing unnecessary calculations or renders.
