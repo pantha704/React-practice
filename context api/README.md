@@ -4,11 +4,32 @@
 - Avoid prop drilling
 
 1. Define context in a separate file ( here context.jsx )
-2. Create a provider component to wrap the app and provide the context ( here AppProvider() )
-3. Use the context in the components ( here Home.jsx ) by
 
-- importing useAppContext hook, or if u havent created a custom hook write, const {contextName} = useContext(<your context>) to import the context values.
-- Now use the values in the component
+   - Example:
+
+   ```js
+   const MyContext = createContext(defaultValue);
+   ```
+
+2. Create a provider component to wrap the app and provide the context ( here AppProvider() )
+
+   - Example:
+
+   ```js
+   const AppProvider = ({ children }) => {
+     return <MyContext.Provider value={value}>{children}</MyContext.Provider>;
+   };
+   ```
+
+3. importing useAppContext hook, or if u havent created a custom hook write, const {contextName} = useContext(<your context>) to import the context values.
+
+   - Example:
+
+   ```js
+   const { contextName } = useContext(MyContext);
+   ```
+
+   - Now use the values in the component
 
 # React + Vite
 

@@ -1,11 +1,11 @@
-Here’s a simple explanation of `useState`, `useEffect`, `useRef`, `useMemo`, `useCallback`, and `memo` in React:
+Here's a simple explanation of `useState`, `useEffect`, `useRef`, `useMemo`, `useCallback`, and `memo` in React:
 
 - **`useState`**: Used to store state in a functional component. It allows you to declare variables that React will track and update when needed.
 
   Example:
 
   ```js
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   ```
 
 - **`useEffect`**: Runs side effects (like fetching data, subscriptions) after rendering. It runs based on specified dependencies.
@@ -14,8 +14,8 @@ Here’s a simple explanation of `useState`, `useEffect`, `useRef`, `useMemo`, `
 
   ```js
   useEffect(() => {
-    fetchData()
-  }, [dependency])
+    fetchData();
+  }, [dependency]);
   ```
 
 - **`useRef`**: Holds a **mutable reference** to a DOM element or value that persists across renders, without triggering a re-render.
@@ -23,7 +23,7 @@ Here’s a simple explanation of `useState`, `useEffect`, `useRef`, `useMemo`, `
   Example:
 
   ```js
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
   ```
 
 ---
@@ -36,25 +36,25 @@ Here’s a simple explanation of `useState`, `useEffect`, `useRef`, `useMemo`, `
   const expensiveCalculation = useMemo(
     () => computeExpensiveValue(a, b),
     [a, b]
-  )
+  );
   ```
 
-- **`useCallback`**: Memoizes **functions**. It ensures the function reference doesn’t change between renders unless its dependencies change.
+- **`useCallback`**: Memoizes **functions**. It ensures the function reference doesn't change between renders unless its dependencies change.
 
   Example:
 
   ```js
   const memoizedCallback = useCallback(() => {
-    doSomething()
-  }, [dependency])
+    doSomething();
+  }, [dependency]);
   ```
 
-- **`memo`**: Optimizes **components** by preventing re-renders if the props haven’t changed.
+- **`memo`**: Optimizes **components** by preventing re-renders if the props haven't changed.
 
   Example:
 
   ```js
-  export default React.memo(MyComponent)
+  export default React.memo(MyComponent);
   ```
 
 These tools help improve performance by reducing unnecessary calculations or renders.
